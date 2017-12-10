@@ -1,0 +1,35 @@
+<div class="container">
+  <h1 class="text-center"><%= @post.title %></h1>
+  <hr>
+  <div class="text-center">
+    <img src="<%= @post.photo.nil? ? "https://picsum.photos/600?image=9" : @post.photo %>" alt="post-image" class="product-image hidden-xs">
+  </div>
+  <hr>
+  <p><%= @post.content %></p>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <h4>Add a new comment</h4>
+      <form action="/posts/<%= @post.id %>/comments" method="post">
+       <div class="form-group">
+         <br>
+         <textarea id="comment_body" name="comment[body]" class="form-control"></textarea>
+       </div>
+       <button type="submit" class="btn btn-success">Submit</button>
+     </form>
+   </div>
+   <div class="col-sm-7">
+    <h5>Comments</h5>
+    <ul>
+      <% @comments.each do |comment| %>
+      <li>> <%= comment.body %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+</div>
+

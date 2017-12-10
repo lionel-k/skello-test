@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="text-center">All our posts</h1>
+  <form action="/">
+   <div class="form-group">
+     <input id="post_title" class="form-control" name="query" type="text" placeholder="Find a post" />
+   </div>
+ </form>
+
+   <% @posts.each do |post| %>
+
+   <div class="product">
+    <div class='product-upvote'>
+      <a href="/posts/<%= post.id %>/upvote">
+        <div class="product-arrow"></div>
+        <div class='product-count'>
+          <%= post.rating %>
+        </div>
+      </a>
+    </div>
+    <img src="<%= post.photo.nil? ? "https://picsum.photos/600?image=9" : post.photo %>" alt="post-image" class="product-image hidden-xs">
+    <div class='product-body'>
+      <a href="/posts/<%= post.id %>"><h3><%= post.title %></h3></a>
+      <% count = post.comments.size %>
+      <p><%= count %> <%= "comment".pluralize(count) %></p>
+    </div>
+  </div>
+
+  <% end %>
+</div>
