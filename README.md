@@ -91,7 +91,7 @@ Le champ 'category' sera utilisé dans le controller pour savoir quelle format l
 To run the app locally:
 
 ```bash
-git clone
+git clone git@github.com:lionel-k/skello-test.git
 bundle install
 ```
 
@@ -112,4 +112,4 @@ ruby app.rb
 
 The app is also live on Heroku:
 
-=> [Heroku](http://www.sinatrarb.com/)
+=> [Heroku](https://posts-app-skello-test.herokuapp.com/)
